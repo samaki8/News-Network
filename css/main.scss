@@ -1,0 +1,11 @@
+//css\main.scss
+// Import des fichiers partiels
+@use "variables" as v;
+@use "base";
+@use "header";
+@use "buttons";
+@use "home-default";
+@use "home-modern";
+@use "home-standard";
+@use "home-news";
+@use "sass:color";

@@ -1,0 +1,24 @@
+@use "variables" as v;
+
+body {
+  font-family: v.$font-base;
+  font-size: v.$font-size-base;
+  background-color: v.$color-bg;
+  color: v.$color-secondary;
+}
+
+logo {
+  height: 40px;
+  width: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

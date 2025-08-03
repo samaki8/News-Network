@@ -1,0 +1,34 @@
+@use "variables" as v;
+@use "sass:color";
+.header {
+  background-color: v.$color-primary;
+  color: v.$color-light;
+  padding: v.$spacing-md;
+
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: v.$spacing-md;
+
+      li {
+        a {
+          color: v.$color-light;
+          font-weight: bold;
+          text-transform: uppercase;
+          text-decoration: none;
+
+          &:hover {
+            color: color.adjust(v.$color-light, $lightness: 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.profile-image {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
