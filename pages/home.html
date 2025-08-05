@@ -4,9 +4,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Site de news moderne, rapide et responsive" />
-<meta name="author" content="Samira" />
-<link rel="icon" href="/assets/favicon.ico" />
+    <meta
+      name="description"
+      content="Site de news moderne, rapide et responsive"
+    />
+    <meta name="author" content="Samira" />
+    <link rel="icon" href="/assets/favicon.ico" />
     <title>News Network</title>
     <link rel="stylesheet" href="/css/main.css" />
     <!-- Bootstrap CSS -->
@@ -14,12 +17,13 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous">
-  </script>
+      crossorigin="anonymous"
+    />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
     <!-- Font Awesome CSS -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -39,44 +43,66 @@
       integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
       crossorigin="anonymous"
     />
+    <!-- javascript -->
+    <script src="/js/modules/dateManager.js" defer></script>
+    <script src="/js/modules/theme-toggle.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="topbar">
+      <!-- TOPBAR -->
+      <div class="topbar" aria-label="Top Bar" role="banner">
         <div
           class="container-fluid d-flex justify-content-between align-items-center"
         >
-          <div class="breacking">
-            <i class="solid-bullhorn"></i>
-            <span class="breacking-label">Breaking News: </span>
-            <span class="breaking-text"
-              >Tesla's Cooking Up A New Way To Wire
+          <!-- Gauche : Breaking News uniquement -->
+          <div class="breaking d-flex align-items-center">
+            <i class="fas fa-bullhorn"></i>
+            <span class="breaking-label ms-2">Breaking News: </span>
+            <span class="breaking-text ms-1">
+              Tesla's Cooking Up A New Way To Wire
             </span>
           </div>
 
-          <div class="date d-none d-lg-flex">
-            <span id="currentDate"> 31/07/2025</span>
-          </div>
-          <div class="theme-toggle i.solid-half-moon">
-            <i class="i.solid-half-moon"></i>
-            <div class="my_switcher">
-              <ul>
-                <li title="Light Mode">
+          <!-- Droite : tout ce qui doit être aligné à droite -->
+          <div class="d-flex align-items-center gap-3">
+            <div class="date d-none d-lg-flex align-items-center">
+              <span id="currentDate"></span>
+              <time id="currentTime" datetime=""></time>
+            </div>
+            <div class="news-bell d-flex align-items-center">
+              <button
+                class="bell-button position-relative"
+                aria-label="Notification"
+              >
+                <i class="fas fa-bell"></i>
+                <span
+                  class="notification-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  >3</span
+                >
+              </button>
+            </div>
+            <div
+              class="theme-switcher"
+              role="group"
+              aria-label="Choix du thème"
+            >
+              <ul class="list-unstyled mb-0 d-flex gap-2">
+                <li title="Mode Clair">
                   <button
                     type="button"
-                    aria-label="Light"
-                    class="setColor light"
+                    class="theme-btn light"
                     data-theme="light"
+                    aria-label="Activer le mode clair"
                   >
-                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-sun"></i>
                   </button>
                 </li>
-                <li title="Dark Mode">
+                <li title="Mode Sombre">
                   <button
                     type="button"
-                    aria-label="Dark"
-                    class="setColor dark"
+                    class="theme-btn dark"
                     data-theme="dark"
+                    aria-label="Activer le mode sombre"
                   >
                     <i class="fas fa-moon"></i>
                   </button>
@@ -84,73 +110,82 @@
               </ul>
             </div>
           </div>
-          <div class="news-bell">
-            <button class="bell-button">
-              <i class="fas fa-bell></i>
-              <span class="notification-count">3</span>
-            </button>
-          </div>
         </div>
       </div>
-      <div class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="navbar py-2">
-          <div
-            class="container-fluid d-flex justify-content-between align-items-center"
+      <!-- NAVBAR PRINCIPALE -->
+      <nav
+        class="navbar navbar-expand-lg color-violet"
+        aria-label="Main Navigation"
+        role="navigation"
+      >
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="/assets/logo.png" alt="Logo" style="height: 40px" />
+          </a>
+          <!-- Bouton hamburger (mobile) -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Afficher le menu"
           >
-            <!-- Logo (toujours visible) -->
-            <div class="logo">
-              <img src="/assets/logo.png" alt="Logo" />
-            </div>
-
-            <!-- Hamburger Button: visible seulement sur mobile -->
-            <button
-              class="navbar-toggler d-block d-lg-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#mainNav"
-              aria-controls="mainNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Navigation + Search + Profile: visible bureau (dès lg) -->
-            <nav id="mainNav">
-              <ul class="navbar-nav flex-row align-items-center mb-0">
-                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Pages</a></li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Single Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">Contact</a>
-                </li>
-              </ul>
-              <!-- Barre de recherche: visible seulement sur bureau -->
-              <div class="search-bar ms-3 d-none d-lg-block">
-                <div class="search-trigger-wrap">
-                  <a href="#search-trigger" title="search">
-                    <i class="fas fa-search"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Profile : visible seulement sur bureau -->
-              <div
-                class="user-profile ms-3 d-none d-lg-flex align-items-center"
-              >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Le menu principal (liens) -->
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav  mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Single Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+            <!-- Barre de recherche et profil à droite (optionnel sur desktop) -->
+          <div class="d-none d-lg-flex align-items-center ms-3">
+              <form class="d-flex me-3" role="search">
+                <input
+                  class="form-control form-control-sm"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-secondary btn-sm ms-2"
+                  type="submit"
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+              <div class="user-profile">
                 <img
                   src="/assets/images/profile.jpg"
+                  class="profile-image rounded-circle"
                   alt="User Profile"
-                  class="profile-image"
+                  style="height: 32px"
                 />
               </div>
-            </nav>
+          </div>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
     <main></main>
     <footer></footer>

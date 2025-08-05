@@ -1,17 +1,73 @@
-$color-bg: #ffffff; // fond général des pages
-$color-primary: #660099; // couleur dominante (violet header, boutons, etc.)
-$color-secondary: #222; // texte principal
-$color-light: #f9f9f9; // gris très clair (fond secondaire)
-$color-dark: #111; // texte profond ou fond sombre
+// 🎯 Palette Light Mode
+$color-body: #494e51;
+$color-black: #000000;
+$color-white: #ffffff;
 
-$font-base: "Inter", sans-serif;
+$color-light-1: #ffffff;
+$color-light-2: #f5f5f5;
+$color-light-3: #d6d6d6;
+$color-dark-1: #2e2e2e;
+
+$color-bg-light-1: #ffffff;
+$color-bg-light-2: #f8f8f5;
+$color-heading-1: #8ff6b8;
+$color-heading-2: #fde8e8;
+
+$color-primary: #f75959;
+$color-link-hover: #f75959;
+
+$color-menu: #4e4e4e;
+$color-sub-menu: #4e4e4e;
+$color-meta-dark-1: #6b7074;
+$color-category-dark-1: #606468;
+$color-border-dark-1: #303030;
+$color-border-dark-2: #dde0e4;
+$color-border-light-1: #424242;
+
+// 🎨 Couleurs supplémentaires
+$color-scandal: #c5fbe1;
+$color-mimosa: #f0fdcd;
+$color-selago: #f1d1fc;
+$color-selago-smooth: #f9eafe;
+$color-old-lace: #fdeddd;
+$color-tidal: #e6fda8;
+$color-perano: #b4aaf3;
+$color-aquamarine: #8ff6b8;
+$color-polar: #d8f6f4;
+$color-atomic-tangerine: #fba574;
+$color-screamin-green: #7af189;
+$color-btn-bg: #a4f4f9;
+$color-medium-purple: #8c52d6;
+$color-ecru-white: #f9f8f0;
+$color-woodsmoke: #121418;
+$color-tundora: #4e4e4e;
+$color-shamrock: #4ade80;
+
+// 🎨 Couleurs Dark Mode
+$dark-color-body: #c1c6c9;
+$dark-color-black: #ffffff;
+$dark-color-white: #000000;
+$dark-color-light-1: #2e2e2e;
+$dark-color-light-2: #4e4e4e;
+$dark-color-light-3: #434343;
+$dark-color-bg-light-1: #212121;
+$dark-color-bg-light-2: #1c1c1c;
+$dark-color-heading-1: #4e4e4e;
+
+// Typographie
+$font-base: "Roboto", sans-serif;
+$font-alt: "Poppins", sans-serif;
 $font-size-base: 16px;
 
+// Spacings et layout
 $header-height: 100px;
 $container-max-width: 1200px;
-
 $spacing-sm: 0.5rem;
 $spacing-md: 1rem;
 $spacing-lg: 2rem;
 
-// Styles de base
+// Thème général
+$theme-light-bg: $color-bg-light-1;
+$theme-light-text: $color-body;
+$theme-dark-bg: $dark-color-bg-light-1;
+$theme-dark-text: $dark-color-body;
