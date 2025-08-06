@@ -1,9 +1,10 @@
 @use "variables" as v;
 @use "sass:color";
+
 header {
-  background-color: v.$color-primary;
-  color: v.$color-light;
-  padding: v.$spacing-md;
+  background-color: v.$color-light-1;
+  color: v.$color-body;
+  padding: 1rem 0rem;
 
   nav {
     ul {
@@ -13,26 +14,63 @@ header {
 
       li {
         a {
-          color: v.$color-light;
+          color: v.$color-light-2;
           font-weight: bold;
           text-transform: uppercase;
           text-decoration: none;
 
           &:hover {
-            color: color.adjust(v.$color-light, $lightness: 10%);
+            color: color.adjust(v.$color-light-2, $lightness: 10%);
           }
         }
       }
     }
   }
 }
-
+.navbar-logo {
+  height: 50px;
+}
 .profile-image {
   height: 32px;
-  width: 32px;
+}
+.rotate-left {
+  transform: rotate(260deg);
+}
+.notification-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  background-color: red;
   border-radius: 50%;
 }
-.topbar {
-  padding: 10px 0;
-  min-height: 50px;
+.fa-bell {
+  width: 25px;
+  height: 25px;
+}
+/*
+.navbar-collapse {
+  height: 100vh;
+  max-width: 260px;
+  width: 100%;
+  background-color: v.$color-bg-light-1;
+}
+*/
+/*
+.sidebar-nav {
+  height: 100vh;
+  max-width: 260px;
+  width: 100%;
+  background-color: v.$color-bg-light-1;
+  overflow-y: auto;
+}*/
+.offcanvas {
+  background-color: v.$color-bg-light-1; // ou $dark-bg selon le thème
+  .nav-link {
+    color: v.$color-bg-light-1;
+    &:hover {
+      color: v.$color-black;
+    }
+  }
 }

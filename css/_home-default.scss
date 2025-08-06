@@ -1,19 +1,7 @@
+//css\_home-default.scss
 @use "variables" as v;
+@use "sass:color";
 
-.home-default {
-  background-color: v.$color-light;
-  color: v.$color-dark;
-
-  .feature-post {
-    border-bottom: 2px solid v.$color-primary;
-    margin-bottom: v.$spacing-lg;
-    padding-bottom: v.$spacing-md;
-  }
-
-  .category-label {
-    background-color: v.$color-primary;
-    color: white;
-    padding: v.$spacing-sm v.$spacing-md;
-    border-radius: 30px;
-  }
+.color-violet {
+  background-color: v.$color-selago;
 }

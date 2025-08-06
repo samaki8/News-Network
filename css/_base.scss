@@ -1,3 +1,5 @@
+//css\_base.scss
+
 @use "variables" as v;
 @use "sass:color";
 
@@ -46,8 +48,8 @@
 body {
   font-family: v.$font-base;
   font-size: v.$font-size-base;
-  background-color: v.$color-bg;
-  color: v.$color-secondary;
+  //background-color: v.$color-bg;
+  //color: v.$color-secondary;
 }
 
 logo {
