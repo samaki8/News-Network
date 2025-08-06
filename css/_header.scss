@@ -74,3 +74,10 @@ header {
     }
   }
 }
+.offcanvas-header {
+  min-height: 70px;
+  padding-bottom: 0;
+}
+.offcanvas-header .navbar-logo img {
+  height: 40px;
+}

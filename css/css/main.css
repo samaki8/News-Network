@@ -113,12 +113,31 @@ header nav ul li a:hover {
   background-color: v.$color-bg-light-1;
 }
 */
+/*
 .sidebar-nav {
   height: 100vh;
   max-width: 260px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: v.$color-bg-light-1;
   overflow-y: auto;
+}*/
+.offcanvas {
+  background-color: #ffffff;
+}
+.offcanvas .nav-link {
+  color: #ffffff;
+}
+.offcanvas .nav-link:hover {
+  color: #000000;
+}
+
+.offcanvas-header {
+  min-height: 70px;
+  padding-bottom: 0;
+}
+
+.offcanvas-header .navbar-logo img {
+  height: 40px;
 }
 
 .button {
